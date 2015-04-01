@@ -1,0 +1,25 @@
+<ion-view view-title="Kontakte">
+
+  <ion-nav-buttons side="right">
+    <button class="button button-icon icon ion-ios-plus-empty" ng-click="addContact()"></button>
+  </ion-nav-buttons>
+
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right"
+                collection-repeat="contact in contacts"
+                type="item-text-wrap"
+                href="#/contacts/{{contact.id}}">
+
+        <img ng-src="{{contact.face}}">
+        <h2>{{contact.firstName}} {{contact.lastName}}</h2>
+        <p>{{contact.metAt}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(contact)">
+          Löschen
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
